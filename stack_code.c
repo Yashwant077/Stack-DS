@@ -30,7 +30,7 @@ int isEmpty(struct Stack* s)
 
 int isFull(struct Stack* s)
 {
-    if(s->top == s->size)
+    if(s->top == (s->size)-1)
     {
         printf("\nStack is Full.\n");
         return 1;
@@ -48,14 +48,8 @@ void push(struct Stack* s)
     printf("There is already %d elements in Stack\n",(s->top)+1);
     printf("Enter the element you want to push::");
     scanf("%d",&num);
-    if((s->top) == -1)
-    {
-        s->arr[(s->top)+1] = num;
-        s->top += 1;
-        return;
-    }
-    s->arr[s->top] = num;
     s->top += 1;
+    s->arr[s->top] = num;
 }
 
 void pop(struct Stack* s)
@@ -67,11 +61,11 @@ void pop(struct Stack* s)
     else
     {
         printf("Size of the Stack is::%d\n",(s->size));
-        printf("Total No. of Elements in the Stack::%d\n",s->top);
-        int val = s->arr[(s->top)-1];
+        printf("Total No. of Elements in the Stack::%d\n",(s->top)+1);
+        int val = s->arr[s->top];
         s->top -= 1;
         printf("Top Element %d is popped Successfully.\n",val);
-        printf("Total No. of Elements in the Stack::%d\n",s->top);
+        printf("Total No. of Elements in the Stack::%d\n",(s->top)+1);
         return;
     }
 }
@@ -82,11 +76,11 @@ void printStack(struct Stack* s)
     {
         return;
     }
+    printf("Total No. of Elements in the Stack::%d\n",(s->top)+1);
     printf("Elements in the stack::");
-    for(int i=(s->size); i>0; i--)
+    for(int i=(s->top); i>=0; i--)
     {
-        printf("\n\t%d::%d",(s->size)-1,s->arr[(s->size)-1]);
-        s->size -= 1;
+        printf("\n\t%d::%d",i,s->arr[i]);
     }
 }
 
