@@ -1,3 +1,3 @@
 Stack Data Structure    
-Here, I am putting c language code for implementation of Stack data structure using array.    
-I have tried to implemented in a different way with the help of switch cases.
+Here, I am sharing C language code for implementing the Stack data structure using an array.    
+I have implemented it in a unique way by utilizing switch cases.    
