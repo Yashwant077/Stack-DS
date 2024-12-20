@@ -1,3 +1,8 @@
+/*
+Stack Data structure implementation in C programming
+
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
